@@ -9,7 +9,7 @@ const argv = require('yargs')
 .option( 'h', {
     alias: 'hasta',
     type: 'number',
-    default:10,
+    demandOption:true,
     describe:'el numero hasta el que quieres que se multiplique'
 })
 .option( 'l', {
@@ -17,6 +17,13 @@ const argv = require('yargs')
     type: 'boolean',
     default: false,
     describe: 'muestra la tabla en consola'
+
+})
+.option( 'c', {
+    alias: 'create',
+    type: 'boolean',
+    default: false, 
+    describe: 'decide si crea un .txt '
 
 })
 .check( (argv, options) => {
